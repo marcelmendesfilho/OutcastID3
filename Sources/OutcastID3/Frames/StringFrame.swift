@@ -10,7 +10,7 @@ import Foundation
 
 extension OutcastID3.Frame {
     public struct StringFrame: OutcastID3TagFrame {
-        public enum StringType: String, Codable {
+        public enum StringType: String, Codable, CaseIterable {
             case albumTitle                         = "TALB"
             case contentType                        = "TCON"
             case copyright                          = "TCOP"
