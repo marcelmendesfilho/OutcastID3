@@ -228,7 +228,7 @@ extension OutcastID3.Frame.PictureFrame.Picture {
 
         #if canImport(UIKit)
         if #available(iOS 11, tvOS 11, macOS 10.15, *) {
-            guard let image = try? NSKeyedUnarchiver.unarchivedObject(ofClass: UIImage.self, from: data) else {
+            guard let image = try NSKeyedUnarchiver.unarchivedObject(ofClass: UIImage.self, from: data) else {
                 throw OutcastID3.Frame.PictureFrame.Error.decodingError
             }
 
@@ -267,7 +267,7 @@ extension OutcastID3.Frame.PictureFrame.Picture {
 #if canImport(UIKit)
 extension UIImage {
     var pngRepresentation: Data? {
-        return self.pngData()
+        return UIImagePNGRepresentation(self)
     }
 }
 #else
