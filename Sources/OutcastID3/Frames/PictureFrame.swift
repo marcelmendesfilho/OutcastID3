@@ -267,7 +267,7 @@ extension OutcastID3.Frame.PictureFrame.Picture {
 #if canImport(UIKit)
 extension UIImage {
     var pngRepresentation: Data? {
-        return UIImagePNGRepresentation(self)
+        return self.pngData()
     }
 }
 #else
